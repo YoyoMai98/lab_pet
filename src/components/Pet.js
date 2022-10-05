@@ -1,8 +1,11 @@
-const Pet = () => {
+const Pet = ({pet}) => {
 
     return (
         <>
-            <h2>Pet</h2>
+            <h4>{pet.name}</h4>
+            <p>Type: {pet.type}</p>
+            <p>Breed: {pet.breed}</p>
+            <p>Age: {pet.age}</p>
         </>
     )
 }
