@@ -12,6 +12,16 @@ const PetContainer = () => {
         setPets(data)
     }
 
+    const postPet = async (newPet) => {
+        const response = await fetch("http://localhost:8080/pets", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newPet)
+        })
+        const savedPet = await response.json()
+        setPets([...pets, savedPet])
+    }
+
     useEffect(() => {
         fetchPets()
     }, [])
@@ -19,7 +29,7 @@ const PetContainer = () => {
     return (
         <>
             <h2>PetContainer</h2>
-            <PetForm />
+            <PetForm onSubmit={postPet} />
             <PetList pets={pets} />
         </>
     )
