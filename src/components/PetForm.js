@@ -30,7 +30,7 @@ const PetForm = ({onSubmit}) => {
     return (
         <>
             <h3>Add a new pet</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="pet-form">
                 <label htmlFor="name">Name:</label>
                 <input
                     id="name"
