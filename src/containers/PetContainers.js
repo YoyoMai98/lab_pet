@@ -22,6 +22,14 @@ const PetContainer = () => {
         setPets([...pets, savedPet])
     }
 
+    // const deletePet = async (newPet) => {
+    //     const response = await fetch("http://localhost:8080/pets", {
+    //         method: "Delete"
+    //     })
+    //     const savedPet = await response.json()
+    //     setPets([...pets, savedPet])
+    // }
+
     useEffect(() => {
         fetchPets()
     }, [])
