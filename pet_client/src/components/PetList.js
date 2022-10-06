@@ -1,9 +1,9 @@
 import Pet from "./Pet"
 
-const PetList = ({pets}) => {
+const PetList = ({pets, onDelete}) => {
 
     const petComponent = pets.map(pet => {
-        return <Pet pet={pet} key={pet.id} />
+        return <Pet pet={pet} key={pet.id} onDelete={onDelete} />
     })
     return (
         <>

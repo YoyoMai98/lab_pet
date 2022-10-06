@@ -22,13 +22,12 @@ const PetContainer = () => {
         setPets([...pets, savedPet])
     }
 
-    // const deletePet = async (newPet) => {
-    //     const response = await fetch("http://localhost:8080/pets", {
-    //         method: "Delete"
-    //     })
-    //     const savedPet = await response.json()
-    //     setPets([...pets, savedPet])
-    // }
+    const deletePet = id => {
+        fetch(`http://localhost:8080/pets/${id}`, {
+            method: "Delete"
+        })
+        .then(fetchPets)
+    }
 
     useEffect(() => {
         fetchPets()
@@ -38,7 +37,7 @@ const PetContainer = () => {
         <>
             <PetForm onSubmit={postPet} />
             <hr />
-            <PetList pets={pets} />
+            <PetList pets={pets} onDelete={deletePet} />
         </>
     )
 }
