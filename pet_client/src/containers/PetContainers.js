@@ -36,8 +36,8 @@ const PetContainer = () => {
 
     return (
         <>
-            <h2>PetContainer</h2>
             <PetForm onSubmit={postPet} />
+            <hr />
             <PetList pets={pets} />
         </>
     )

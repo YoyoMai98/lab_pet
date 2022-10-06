@@ -49,6 +49,7 @@ const PetForm = ({onSubmit}) => {
                     value={newPet.type}
                     onChange={handleChange}
                 />
+                <br />
                 <label htmlFor="breed">Breed:</label>
                 <input
                     id="breed"
@@ -67,6 +68,7 @@ const PetForm = ({onSubmit}) => {
                     value={newPet.age}
                     onChange={handleChange}
                 />
+                <br />
                 <input type="submit" value="Add" />
             </form>
         </>
